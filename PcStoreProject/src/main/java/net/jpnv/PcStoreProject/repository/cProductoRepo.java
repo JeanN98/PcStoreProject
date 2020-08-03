@@ -1,3 +1,4 @@
+//clase para la busqueda de los objetos producto por nombre precio y id
 package net.jpnv.PcStoreProject.repository;
 
 import java.util.List;
