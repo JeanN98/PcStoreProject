@@ -10,33 +10,77 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "productos")
+//text
+@Table(name = "producto")
 public class cProducto {
 	 @Id
 	    @GeneratedValue(strategy=GenerationType.IDENTITY)
-	    private long Id ;
+	    private Long Id ;
 	    private float precioUnitario;
 	    private float precioVenta;
-     private String nombre;
+        private String nombre;
 	    private UUID foto;
 	    
 	    private String descripcion;
 	    private String tipo;
-	    /*Metodos set*/
-	    public void setId (long Id) {this.Id= Id;}
-	    public void setPrecioUnitario(float PU) {this.precioUnitario= PU;}
-	    public void setPrecioVenta(float PV) {this.precioVenta= PV;}
-	    public void setFoto(UUID foto) {this.foto= foto;}
-	    public void setDescripcion(String descripcion) {this.descripcion=descripcion;}
-	    public void setTipo(String tipo) {this.tipo= tipo;}
-	    public void setNombre(String nombre) {this.nombre= nombre;}
 	    
-	    /*Metodos get*/
-	    public long  getId () {return Id;}
-	    public float getPrecioUnitario() {return precioUnitario;}
-	    public float getPrecioVenta() {return precioVenta;}
-	    public UUID getFoto() {return foto;}
-	    public String getDescripcion() {return descripcion;}
-	    public String getTipo() {return tipo;}
-	    public String getNombre() {return nombre;}
+	    
+	    /*Metodos set y get*/
+	    public void SetId(Long ID) {
+	    	this.Id= ID;  
+	    	
+	    }
+	    
+	    public Long getId() {
+	    	return Id; 
+	    }
+	    
+	    
+		public float getPrecioUnitario() {
+			return precioUnitario;
+		}
+		public void setPrecioUnitario(float precioUnitario) {
+			this.precioUnitario = precioUnitario;
+		}
+		
+		
+		public float getPrecioVenta() {
+			return precioVenta;
+		}
+		public void setPrecioVenta(float precioVenta) {
+			this.precioVenta = precioVenta;
+		}
+		
+		
+		public String getNombre() {
+			return nombre;
+		}
+		public void setNombre(String nombre) {
+			this.nombre = nombre;
+		}
+		
+		
+		public UUID getFoto() {
+			return foto;
+		}
+		public void setFoto(UUID foto) {
+			this.foto = foto;
+		}
+		
+		
+		public String getDescripcion() {
+			return descripcion;
+		}
+		public void setDescripcion(String descripcion) {
+			this.descripcion = descripcion;
+		}
+		
+		
+		public String getTipo() {
+			return tipo;
+		}
+		public void setTipo(String tipo) {
+			this.tipo = tipo;
+		}
+	  
 }
