@@ -9,7 +9,7 @@ import net.jpnv.PcStore.repository.cProductoImpl;
 @Controller 
 @RequestMapping("/PcStore")
 public class ProductoControlador {
-
+//text
 	@Autowired 
 	@Qualifier("Repository1")
 	cProductoImpl Prod; 

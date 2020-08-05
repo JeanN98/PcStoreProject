@@ -4,5 +4,5 @@ import javax.persistence.Table;
 @Entity 
 @Table(name="administrador")
 public class cAdministrador extends cUsuario{
-
+//text
 }

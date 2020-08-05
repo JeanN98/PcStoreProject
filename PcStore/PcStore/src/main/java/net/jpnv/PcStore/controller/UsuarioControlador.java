@@ -8,6 +8,7 @@ import net.jpnv.PcStore.repository.cUsuarioImpl;
 @Controller 
 @RequestMapping("/PcStore/User")
 public class UsuarioControlador {
+	//text
 @Autowired
 @Qualifier("Repository2")
 cUsuarioImpl User;

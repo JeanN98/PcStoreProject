@@ -29,7 +29,7 @@ public class PictureService {
                 + ". Please try again!");
        }
     }
-    
+  //text
     public void deletePicture(UUID id) {
         try {
           Path fileToDeletePath = Paths.get(uploadDir + File.separator + id.toString()+".jpg");

@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-
+//text
 @Table(name = "producto")
 public class cProducto {
 	 @Id

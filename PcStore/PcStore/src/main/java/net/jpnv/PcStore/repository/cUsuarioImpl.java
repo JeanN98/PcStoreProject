@@ -22,7 +22,7 @@ public class cUsuarioImpl implements cUsuarioRepo{
 	public <S extends cUsuario> Iterable<S> saveAll(Iterable<S> entities) {
 		// TODO Auto-generated method stub
 		return null;
-	}
+	}//text
 
 	@Override
 	public Optional<cUsuario> findById(Long id) {

@@ -12,7 +12,7 @@ public class cUsuario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	
+	//text
 	
 	private String Nombre; 
 	private String Telefono;

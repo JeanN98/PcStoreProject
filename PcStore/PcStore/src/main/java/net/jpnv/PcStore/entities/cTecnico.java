@@ -6,7 +6,7 @@ import javax.persistence.Table;
 public class cTecnico extends cUsuario  {
 
 private String servicio;
-
+//text
 
 public String getServicio() {
 	return servicio;
