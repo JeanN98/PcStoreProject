@@ -6,7 +6,7 @@ import javax.persistence.Table;
 public class cCliente {
 	private String SaldoTarjeta;
 	private String TipoCliente;
-	//text
+	//text//
 
 	public String getSaldoTarjeta() {
 		return SaldoTarjeta;

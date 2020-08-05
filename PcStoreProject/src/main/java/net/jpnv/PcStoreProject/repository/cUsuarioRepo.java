@@ -7,3 +7,4 @@ public interface cUsuarioRepo  extends CrudRepository<cUsuario,Long> {
 	  List<cUsuario> findbynombre(String nombre); 
 	  List<cUsuario> findTelefono(String Telefono);
 }
+//

@@ -23,7 +23,7 @@ public class cUsuario {
 	public Long getId() {
 		
 		return id; 
-	}
+	}//
 	
 	public String getTelefono() {
 		return Telefono;

@@ -22,7 +22,7 @@ public class cUsuarioImpl implements cUsuarioRepo{
 		// TODO Auto-generated method stub
 		return null;
 	}
-
+//
 	@Override
 	public Optional<cUsuario> findById(Long id) {
 		// TODO Auto-generated method stub

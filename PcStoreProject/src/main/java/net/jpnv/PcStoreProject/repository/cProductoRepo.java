@@ -11,3 +11,4 @@ public interface cProductoRepo extends CrudRepository <cProducto, Long> {
 	List <cProducto> findBynombre(String nombre);
 	List <cProducto> findByprecioVenta(float PV);
 	}
+//
