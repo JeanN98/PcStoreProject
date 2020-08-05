@@ -1,5 +1,5 @@
 package net.jpnv.PcStoreProject.entities;
-
+//comentario
 
 import java.util.UUID;
 
