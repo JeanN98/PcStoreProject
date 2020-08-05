@@ -5,7 +5,7 @@ package net.jpnv.PcStore.repository;
 import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
-import net.jpnv.PcStore.entities.*;
+import net.jpnv.PcStore.entities.cProducto;
 
 public interface cProductoRepo extends CrudRepository <cProducto, Long> {
 	List<cProducto> findById(String Id);

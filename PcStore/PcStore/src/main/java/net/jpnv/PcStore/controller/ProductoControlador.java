@@ -13,5 +13,4 @@ public class ProductoControlador {
 	@Autowired 
 	@Qualifier("Repository1")
 	cProductoImpl Prod; 
-	
 }

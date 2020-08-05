@@ -97,5 +97,10 @@ public class cProductoImpl implements cProductoRepo {
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	public String EnviarAlgo() {
+		return "Hola como estas";
+		
+	}
 
 }
