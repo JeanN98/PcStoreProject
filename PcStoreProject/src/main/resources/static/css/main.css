@@ -1,0 +1,54 @@
+@charset "ISO-8859-1";
+
+header{
+	background:#2c3e50;
+	color:#fff;
+}
+
+.cuadritoServicio {
+    background-image: url('../images/BackgroundServicio.jpg');
+	color:#fff;
+	background-repeat: repeat-x;
+     background-position: 0 0;
+}
+
+
+.cuadritoCompra{
+	background-image: url('../images/BackgroundCompra.jpg');
+	color:#fff;
+	background-repeat: repeat-x;
+     background-position: 0 0;
+}
+.cuadritoRepuesto{
+	background-image: url('../images/BackgroundRepuestos.jpg');
+	color:#fff;
+	background-repeat: repeat-x;
+     background-position: 0 0;
+}
+.cuadritoCarrito{
+		background-image: url('../images/BackgroundCarrito.jpg');
+	color:#fff;
+	background-repeat: repeat-x;
+     background-position: 0 0;
+	
+}
+aside {
+	background:#c0c0c0;
+	color:#fff;
+}
+article {
+	background:#c0392b;
+	color:#fff;
+	
+}
+.navbar-collapse {
+  justify-content: flex-end;
+  background:#c0392b;
+}
+.nav-link{
+	color:#fff;
+}
+.producto {
+	background:	#8080ff;
+}
+

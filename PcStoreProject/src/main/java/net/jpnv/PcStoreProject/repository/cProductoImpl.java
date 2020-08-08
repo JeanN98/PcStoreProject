@@ -1,33 +1,28 @@
 package net.jpnv.PcStoreProject.repository;
 
-import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
-import net.jpnv.PcStoreProject.entities.cProducto;
-import net.jpnv.PcStoreProject.repository.cProductoRepo;
-
+import net.jpnv.PcStoreProject.entities.cUsuario;
 
 @Repository
-@Qualifier("Repository1")
-public class cProductoImpl implements cProductoRepo {
+public class cProductoImpl implements ProductoRepo {
 
 	@Override
-	public <S extends cProducto> S save(S entity) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	//text
-	@Override
-	public <S extends cProducto> Iterable<S> saveAll(Iterable<S> entities) {
+	public <S extends cUsuario> S save(S entity) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Optional<cProducto> findById(Long id) {
+	public <S extends cUsuario> Iterable<S> saveAll(Iterable<S> entities) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Optional<cUsuario> findById(Long id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -39,13 +34,13 @@ public class cProductoImpl implements cProductoRepo {
 	}
 
 	@Override
-	public Iterable<cProducto> findAll() {
+	public Iterable<cUsuario> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Iterable<cProducto> findAllById(Iterable<Long> ids) {
+	public Iterable<cUsuario> findAllById(Iterable<Long> ids) {
 		// TODO Auto-generated method stub
 		return null;
 	}
@@ -63,13 +58,13 @@ public class cProductoImpl implements cProductoRepo {
 	}
 
 	@Override
-	public void delete(cProducto entity) {
+	public void delete(cUsuario entity) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public void deleteAll(Iterable<? extends cProducto> entities) {
+	public void deleteAll(Iterable<? extends cUsuario> entities) {
 		// TODO Auto-generated method stub
 		
 	}
@@ -77,29 +72,6 @@ public class cProductoImpl implements cProductoRepo {
 	@Override
 	public void deleteAll() {
 		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public List<cProducto> findById(String Id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<cProducto> findBynombre(String nombre) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public List<cProducto> findByprecioVenta(float PV) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	public String EnviarAlgo() {
-		return "Hola como estas";
 		
 	}
 

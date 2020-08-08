@@ -1,6 +1,4 @@
 package net.jpnv.PcStoreProject.entities;
-
-
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,31 +9,22 @@ import javax.persistence.Id;
 public class cUsuario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
-	//text
-	
-	private String Nombre; 
+	private Long id; 
+	private String Nombre;
 	private String Telefono;
-
-
 	
-	public void  setId(Long id) {
-	this.id=id;	
+	public void setId(Long Id) {
+		this.id= Id; 
 	}
-	
 	public Long getId() {
-		
-		return id; 
+		return id;
 	}
-	
 	public String getTelefono() {
 		return Telefono;
 	}
 	public void setTelefono(String telefono) {
 		Telefono = telefono;
 	}
-	
-	
 	public String getNombre() {
 		return Nombre;
 	}
