@@ -10,12 +10,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-//text
 @Table(name = "producto")
 public class cProducto {
 	 @Id
 	    @GeneratedValue(strategy=GenerationType.IDENTITY)
-	    private Long Id ;
+	    private Long id ;
 	    private float precioUnitario;
 	    private float precioVenta;
         private String nombre;
@@ -27,12 +26,12 @@ public class cProducto {
 	    
 	    /*Metodos set y get*/
 	    public void SetId(Long ID) {
-	    	this.Id= ID;  
+	    	this.id= ID;  
 	    	
 	    }
 	    
 	    public Long getId() {
-	    	return Id; 
+	    	return id; 
 	    }
 	    
 	    

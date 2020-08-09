@@ -6,8 +6,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import net.jpnv.PcStoreProject.repository.cProductoImpl;
-import net.jpnv.PcStoreProject.repository.cCarritoImpl;
+//import net.jpnv.PcStoreProject.repository.cProductoImpl;
+import net.jpnv.PcStoreProject.repository.CarritoRepo;
 
 @Controller 
 @RequestMapping("/PcStorecar")
@@ -15,10 +15,10 @@ public class cCarritoController {
 
 
 
-	@Autowired 
-	 cProductoImpl Prod; 
+//	@Autowired 
+	// cProductoImpl Prod; 
 	@Autowired
-	cCarritoImpl carr;
+	CarritoRepo carr;
 
 	@RequestMapping("")
 	public String Index() {

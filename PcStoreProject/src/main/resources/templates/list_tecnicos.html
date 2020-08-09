@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>PC Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md">
+  
+
+  <div class="collapse navbar-collapse" id="main-navigation">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/PcStore/">Inicio</a>
+      </li>
+  
+      <div sec:authorize="isAuthenticated()">
+      	<li class="nav-item">
+       		<a class="nav-link" href="/PcStore/add_producto">Subir producto</a>
+      	</li>
+      </div>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">Lista de clientes</a>
+      </li>
+        
+      <div sec:authorize="isAuthenticated()">
+       <li class="nav-item">
+        <a class="nav-link" href="/PcStore/list_tecnicos">Lista de tecnicos</a>
+       </li> 
+      </div>
+        
+          
+       <div sec:authorize="isAuthenticated()">
+       <li class="nav-item">
+        <a class="nav-link" href="/PcStore/logout">Cerrar sesión</a>
+       </li>    
+    </div>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
+</body>
+</html>

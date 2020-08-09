@@ -1,10 +1,150 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
+<html xmlns:th="http://www.thymeleaf.org">
 
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>PC Store</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/css/main.css">
+
+</head>
+
+<body>
+<nav class="navbar navbar-expand-md">
+  
+  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="main-navigation">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/PcStore/">Inicio</a>
+      </li>
+      
+      <div sec:authorize="isAuthenticated()">
+      	<li class="nav-item">
+       		<a class="nav-link" href="/PcStore/add_producto">Subir producto</a>
+      	</li>
+      </div>
+      
+      <li class="nav-item">
+        <a class="nav-link" href="#">Lista de clientes</a>
+      </li>
+        
+      <div sec:authorize="isAuthenticated()">
+       <li class="nav-item">
+        <a class="nav-link" href="/PcStore/list_tecnicos">Lista de tecnicos</a>
+       </li> 
+      </div>
+      
+       <div sec:authorize="isAuthenticated()">
+       <li class="nav-item">
+        <a class="nav-link" href="/PcStore/logout">Cerrar sesión</a>
+       </li>    
+    </div>
+      
+    </ul>
+  </div>
+</nav>
+
+<header class="page-header header container-fluid">
+<div class="overlay">
+
+    <div class="container my-2">
+        <div class="card-transparent">
+            <div class="card-body rounded" style="background-color: rgba(0, 0, 0, 0.4); ">
+                <div th:switch="${product}" class="container my-5">
+                        <h2 th:case="null">No Hay productos aun!</h2>
+                        <div th:case="*">
+                            <table class="table table-striped table-responsive-lg">
+                                <thead>
+                                    <tr>
+                                        <th style="width: 51%">Nombre</th>
+                                        <!--  <th>Preparación</th> -->
+                                        <th style="width: 15%">Dificultad</th>
+                                        <th style="width: 10%">Imagen</th>
+                                        <th style="width: 8%">Ver</th>
+                                        <div sec:authorize="isAuthenticated()">
+                                           <th style="width: 8%">Edit</th>
+                                           <th style="width: 8%">Delete</th>
+                                        </div>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr th:each="productos : ${product}">
+                                        <td th:text="${product.id}"></td>
+                                        <td th:text="${product.nombre}"></td>
+                                    <!--   <td><img th:src="@{/pic/{id}(id=${receta.foto}+.jpg)}" width="80" class="rounded"></td> -->
+                                        
+                                        <td>
+                                         <a data-toggle="modal" data-target="#modalLong" th:attr="data-target='#modalLong'+${producto.id }" class="btn btn-primary">
+                                            <i class="fas fa-glasses ml-2"></i></a>
+                                         <div class="modal fade" th:id="modalLong+${producto.id}" tabindex="-1" role="dialog" aria-labelledby="detalleReceta" aria-hidden="true">
+  										 	<div class="modal-dialog" role="document">
+    											<div class="modal-content">
+      												<div class="modal-header">
+        											<h5 class="modal-title text-dark">Detalle del producto</h5>
+        											<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          											<span aria-hidden="true">&times;</span>
+        											</button>
+      												</div>
+      												<div class="modal-body">
+        												<h4 class="text-dark" th:text="${receta.nombre}"></h4>
+        												<p><img th:src="@{/pic/{id}(id=${receta.foto}+.jpg)}" width="240" class="rounded"></p>
+        												<!--  <div class="text" th:utext="${#strings.unescapeJava(#strings.replace(#strings.escapeJava(receta.preparacion),'\n','&lt;br /&gt;'))}"></div> -->
+        												<p class="text-dark" data-th-utext="${#strings.replace(#strings.escapeXml(receta.preparacion),'&#10;','&lt;br&gt;')}"></p>
+      												</div>
+      												<div class="modal-footer">
+        											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+											    	</div>
+    											   </div>
+  											   </div>
+										 </div>
+                                        </td>
+                                        
+                                        <div sec:authorize="isAuthenticated()">
+                                        <td><a th:href="@{/recetas/edit/{id}(id=${receta.id})}" class="btn btn-primary"><i class="fas fa-edit ml-2"></i></a></td>
+                                        
+                                        <td><a data-toggle="modal" data-target="#modal-warning" th:attr="data-target='#modal-warning'+${receta.id }" class="btn btn-primary">
+                                            <i class="fas fa-trash-alt ml-2"></i></a>
+                                            <div class="modal modal-warning fade in" th:id="modal-warning+${receta.id}" >
+    											<div class="modal-dialog">
+        											<div class="modal-content">
+            											<div class="modal-header">
+                										<h5 class="modal-title text-dark">¿Borrar esta receta?</h5>
+                										<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                										<span aria-hidden="true">&times;</span></button>
+            											</div>
+            											<div class="modal-body">
+                											<h3 class="text-dark" th:text="${producto.nombre}"></h3>
+            											</div>
+            											<div class="modal-footer">
+                										<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">No</button>
+                										<a type="button" class="btn btn-outline" th:href="@{/recetas/delete/{id}(id=${receta.id})}">
+                											<i class="fa fa-check"></i>&nbsp;Sí</a>
+            											</div>
+        											</div>
+    											</div>
+											</div>
+                                        </td>
+                                        </div>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</header>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>

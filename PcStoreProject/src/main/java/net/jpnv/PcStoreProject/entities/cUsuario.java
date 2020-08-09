@@ -10,8 +10,8 @@ public class cUsuario {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id; 
-	private String Nombre;
-	private String Telefono;
+	private String nombre;
+	private String telefono;
 	
 	public void setId(Long Id) {
 		this.id= Id; 
@@ -20,16 +20,16 @@ public class cUsuario {
 		return id;
 	}
 	public String getTelefono() {
-		return Telefono;
+		return telefono;
 	}
-	public void setTelefono(String telefono) {
-		Telefono = telefono;
+	public void setTelefono(String Telefono) {
+		telefono = Telefono;
 	}
 	public String getNombre() {
-		return Nombre;
+		return nombre;
 	}
-	public void setNombre(String nombre) {
-		Nombre = nombre;
+	public void setNombre(String Nombre) {
+		nombre = Nombre;
 	}
 	
 	
