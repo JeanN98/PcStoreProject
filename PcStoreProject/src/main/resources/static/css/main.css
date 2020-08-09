@@ -1,35 +1,47 @@
 @charset "ISO-8859-1";
 
-header{
-	background:#2c3e50;
-	color:#fff;	
+body{
+	
+ background-image: url('../images/BackgroundBody.jpg');
+	color:#fff;
+	background-size: cover;
+     background-position: center;
+}
+
+
+.presentacion{
+ 
+ background-image: url('../images/BackgroundPresentacion.jpg');
+	color:#fff;
+	background-size: cover;
+     background-position: center;
 }
 
 .cuadritoServicio {
     background-image: url('../images/BackgroundServicio.jpg');
 	color:#fff;
-	background-repeat: repeat-x;
-     background-position: 0 0;
+	background-size: cover;
+     background-position: center;
 }
 
 
 .cuadritoCompra{
 	background-image: url('../images/BackgroundCompra.jpg');
 	color:#fff;
-	background-repeat: repeat-x;
-     background-position: 0 0;
+	background-size: cover;
+     background-position: center;
 }
 .cuadritoRepuesto{
 	background-image: url('../images/BackgroundRepuestos.jpg');
 	color:#fff;
-	background-repeat: repeat-x;
-     background-position: 0 0;
+	background-size: cover;
+     background-position: center;
 }
 .cuadritoCarrito{
 		background-image: url('../images/BackgroundCarrito.jpg');
 	color:#fff;
-	background-repeat: repeat-x;
-     background-position: 0 0;
+	background-size: cover;
+     background-position: center;
 	
 }
 aside {
@@ -43,7 +55,7 @@ article {
 }
 .navbar-collapse {
   justify-content: flex-end;
-  background:#c0392b;
+  background:#A6998F;
 }
 .nav-link{
 	color:#fff;
