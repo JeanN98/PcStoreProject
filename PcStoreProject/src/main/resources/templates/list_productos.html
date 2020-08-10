@@ -79,12 +79,12 @@
                                         <th style="width: 8%">descripcion</th>
                                         <th style="width: 8%">tipo</th>
                                          
-                                        <!--   
+                                       
                                         <div sec:authorize="isAuthenticated()">
                                            <th style="width: 8%">Edit</th>
-                                           <th style="width: 8%">Delete</th>
+                                         <th style="width: 8%">Delete</th>
                                         </div>
-                                        -->
+                                       
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -95,7 +95,36 @@
                                         <td th:text="${producto.precioVenta}"></td>
                                         <td th:text="${producto.descripcion}"></td>
                                         <td th:text="${producto.tipo}"></td>
+                                 
+                                 <div sec:authorize="isAuthenticated()">
+                                        <td><a th:href="@{/PcStore/edit/{id}(id=${producto.id})}" class="btn btn-primary"><i class="fas fa-edit ml-2"></i></a></td>
                                         
+                                         <td><a data-toggle="modal" data-target="#modal-warning" th:attr="data-target='#modal-warning'+${producto.id}" class="btn btn-primary">
+                                            <i class="fas fa-trash-alt ml-2"></i></a>
+                                            <div class="modal modal-warning fade in" th:id="modal-warning+${producto.id}" >
+    											<div class="modal-dialog">
+        											<div class="modal-content">
+            											<div class="modal-header">
+                										<h5 class="modal-title text-dark">¿Borrar este producto?</h5>
+                										<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                										<span aria-hidden="true">&times;</span></button>
+            											</div>
+            											<div class="modal-body">
+                											<h3 class="text-dark" th:text="${producto.nombre}"></h3>
+            											</div>
+            											<div class="modal-footer">
+                										<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">No</button>
+                										<a type="button" class="btn btn-outline" th:href="@{/PcStore/delete/{id}(id=${producto.id})}">
+                											<i class="fa fa-check"></i>&nbsp;Sí</a>
+            											</div>
+        											</div>
+    											</div>
+											</div>
+                                        </td>
+                                 </div>      
+                                 
+                                 
+                                  
                                         
                                     <!--   <td><img th:src="@{/pic/{id}(id=${receta.foto}+.jpg)}" width="80" class="rounded"></td> 
                                         
