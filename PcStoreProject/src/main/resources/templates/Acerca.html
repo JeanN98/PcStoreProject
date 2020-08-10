@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>PC STORE</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/main.css"  >
+    <link rel="stylesheet" type="text/css" href="/css/fonts/style.css"  >
+     
+</head>
+<body>
+  
+<nav class="navbar navbar-expand-md">
+
+  <div class="collapse-fluid navbar-collapse" id="main-navigation">
+    <ul class="navbar-nav">
+
+      <li class="nav-item">
+        <a class="nav-link" style = "font-family:courier,arial,helvética;"  href="PcStore/Acerca"> <span class="icon-task"> Acerca de </span> </a>
+      </li>
+		
+      <li class="nav-item">
+         <a class="nav-link" href="#" style = "font-family:courier,arial,helvética;"> <span class="icon-grid-alt">Ver catalogo</span>  </a>
+      </li>
+      
+      
+      <li class="nav-item">
+         <a class="nav-link" href="/PcStore" style = "font-family:courier,arial,helvética;"> <span class="icon-home">  Inicio </span> </a>
+      </li>
+  
+  	  <div sec:authorize="isAuthenticated()">
+      	<li class="nav-item">
+       		<a class="nav-link" href="/PcStore/add_producto"  style = "font-family:courier,arial,helvética;" ><span class="icon-out"> Subir producto</span></a>
+      	</li>
+      </div>
+      
+    <div sec:authorize="isAuthenticated()"> 
+      <li class="nav-item">
+        <a class="nav-link" href="PcStore/list"   style = "font-family:courier,arial,helvética;" > <span class="icon-list"> Lista de productos</span> </a>
+      </li>
+    </div>     
+    
+      <div sec:authorize="isAuthenticated()">
+       <li class="nav-item">
+        <a class="nav-link" href="/PcStore/list_tecnicos"  style = "font-family:courier,arial,helvética;"><span class="icon-clipboard">Lista de tecnicos</span></a>
+       </li> 
+      </div> 
+ 
+ 
+     
+    <div sec:authorize="isAuthenticated()">
+       <li class="nav-item">
+        <a class="nav-link" href="/PcStore/logout" style = "font-family:courier,arial,helvética;"> <span class="icon-in-alt">Cerrar sesión</span></a>
+       </li>    
+    </div>
+    
+    </ul>
+  </div>
+</nav>
+
+
+<div>
+<p>
+Es una tienda en línea dedicada a la venta de computadores en todas sus categorías, desde piezas de refacción hasta <br>
+material de limpieza y mantenimiento también proporciona servicio de mantenimiento y reparación de laptops computadores teléfono 
+</p>
+</div>
+  
+<div class="container-xl">
+ <div class="row">
+ 
+  <div class="col-xs-6">
+   <p><h1>MISION</h1> </p>
+   <p>
+   La tienda en línea debe ser capas de brindar a los futuros clientes una vista amigable y entendible de cada articulo y servicio <br>
+   que estén disponibles, promoviendo la interacción con el cliente para otorgar una atención personalizada para el mismo, llegando <br>
+   a satisfacer las necesidades de los clientes de una manera mas cómoda y accesible.  
+   
+   </p>
+  </div>
+  
+  <div class="col-xs-6">
+  <p><h1>VISION </h1> </p>
+  <p>
+   La tienda en línea podrá mostrar los productos por medio de un menú catalogado por el tipo de articulo tendrá un buscador para los producto,<br>
+   filtro de búsqueda para facilitar la navegación  del cliente, dará una breve descripción del producto y también mostrara productos software <br>
+   como licencias, antivirus etc. <br>
+   En cuanto al servicio, la tienda online constara de un apartado para que el cliente  pueda enviar los detalles de su maquina, para después ser  atendido por un técnico. 
+   </p>
+  
+  </div>
+  
+ </div>
+
+ 
+</div>  <!-- Fin del div que contiene el login y los cuadritos -->    
+ 
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 
+</body>
+</html>

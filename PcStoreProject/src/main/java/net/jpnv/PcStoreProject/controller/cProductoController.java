@@ -46,6 +46,10 @@ public String Index() {
      return "list_productos";
  }
  
+ @GetMapping("/Acerca")
+ public String showSignUpForm() {
+     return "Acerca";
+ }
  
  @PreAuthorize("hasAuthority('admin')")
  @RequestMapping("/private")
