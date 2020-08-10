@@ -30,7 +30,7 @@
       </div>
     <div sec:authorize="isAuthenticated()"> 
       <li class="nav-item">
-        <a class="nav-link" href="#">Lista de clientes</a>
+        <a class="nav-link" href="List_Productos">Lista de clientes</a>
       </li>
     </div>     
       <div sec:authorize="isAuthenticated()">
@@ -63,7 +63,7 @@
   </div>
  
   <div class="col-xs-2 col-md-2" sec:authorize= ${#bools.setIsFalse(isAuthenticated())}>
-   <form   th:action="@{/PcStore/login}" method="post" > <!--Este e el contenedor del Login   -->
+   <form   th:action="@{/PcStore}" method="post" > <!--Este e el contenedor del Login   -->
      <div class="row">
      
                 <div class="form-group col-md-12">                     

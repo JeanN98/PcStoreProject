@@ -64,9 +64,12 @@
                                     <tr>
                                         <th style="width: 51%">Nombre</th>
                                         <!--  <th>Preparación</th> -->
-                                        <th style="width: 15%">Dificultad</th>
-                                        <th style="width: 10%">Imagen</th>
-                                        <th style="width: 8%">Ver</th>
+                                        <th style="width: 15%">Precio Unitario</th>
+                                        <th style="width: 10%">Precio venta</th>
+                                        <th style="width: 8%">descripcion</th>
+                                        <th style="width: 8%">tipo</th>
+                                         <th style="width: 8%">foto</th>
+                                          
                                         <div sec:authorize="isAuthenticated()">
                                            <th style="width: 8%">Edit</th>
                                            <th style="width: 8%">Delete</th>
@@ -77,12 +80,18 @@
                                     <tr th:each="productos : ${product}">
                                         <td th:text="${product.id}"></td>
                                         <td th:text="${product.nombre}"></td>
+                                        <td th:text="${product.precioUnitario}"></td>
+                                        <td th:text="${product.precioVenta}"></td>
+                                        <td th:text="${product.descripcion}"></td>
+                                        <td th:text="${product.tipo}"></td>
+                                        <td th:text="${product.foto}"></td>
+                                        
                                     <!--   <td><img th:src="@{/pic/{id}(id=${receta.foto}+.jpg)}" width="80" class="rounded"></td> -->
                                         
                                         <td>
                                          <a data-toggle="modal" data-target="#modalLong" th:attr="data-target='#modalLong'+${producto.id }" class="btn btn-primary">
                                             <i class="fas fa-glasses ml-2"></i></a>
-                                         <div class="modal fade" th:id="modalLong+${producto.id}" tabindex="-1" role="dialog" aria-labelledby="detalleReceta" aria-hidden="true">
+                                         <div class="modal fade" th:id="modalLong+${producto.id}" tabindex="-1" role="dialog" aria-labelledby="Descripcion" aria-hidden="true">
   										 	<div class="modal-dialog" role="document">
     											<div class="modal-content">
       												<div class="modal-header">
@@ -91,47 +100,17 @@
           											<span aria-hidden="true">&times;</span>
         											</button>
       												</div>
-      												<div class="modal-body">
-        												<h4 class="text-dark" th:text="${receta.nombre}"></h4>
-        												<p><img th:src="@{/pic/{id}(id=${receta.foto}+.jpg)}" width="240" class="rounded"></p>
-        												<!--  <div class="text" th:utext="${#strings.unescapeJava(#strings.replace(#strings.escapeJava(receta.preparacion),'\n','&lt;br /&gt;'))}"></div> -->
-        												<p class="text-dark" data-th-utext="${#strings.replace(#strings.escapeXml(receta.preparacion),'&#10;','&lt;br&gt;')}"></p>
-      												</div>
+      												
+      											
       												<div class="modal-footer">
         											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-
+              
 											    	</div>
     											   </div>
   											   </div>
 										 </div>
                                         </td>
                                         
-                                        <div sec:authorize="isAuthenticated()">
-                                        <td><a th:href="@{/recetas/edit/{id}(id=${receta.id})}" class="btn btn-primary"><i class="fas fa-edit ml-2"></i></a></td>
-                                        
-                                        <td><a data-toggle="modal" data-target="#modal-warning" th:attr="data-target='#modal-warning'+${receta.id }" class="btn btn-primary">
-                                            <i class="fas fa-trash-alt ml-2"></i></a>
-                                            <div class="modal modal-warning fade in" th:id="modal-warning+${receta.id}" >
-    											<div class="modal-dialog">
-        											<div class="modal-content">
-            											<div class="modal-header">
-                										<h5 class="modal-title text-dark">¿Borrar esta receta?</h5>
-                										<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-                										<span aria-hidden="true">&times;</span></button>
-            											</div>
-            											<div class="modal-body">
-                											<h3 class="text-dark" th:text="${producto.nombre}"></h3>
-            											</div>
-            											<div class="modal-footer">
-                										<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">No</button>
-                										<a type="button" class="btn btn-outline" th:href="@{/recetas/delete/{id}(id=${receta.id})}">
-                											<i class="fa fa-check"></i>&nbsp;Sí</a>
-            											</div>
-        											</div>
-    											</div>
-											</div>
-                                        </td>
-                                        </div>
                                     </tr>
                                 </tbody>
                             </table>

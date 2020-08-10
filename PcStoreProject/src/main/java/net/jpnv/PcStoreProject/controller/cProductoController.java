@@ -31,10 +31,6 @@ public String Index() {
 	return "Index";
 }
 
- @RequestMapping("/login")
- public String login() {
-	return "login";
-}
  
  @GetMapping("/add_producto")
  public String showSignUpForm(cProducto Producto) {
@@ -49,4 +45,7 @@ public String Index() {
      return "list_productos";
  }
   
+ 
+ 
+ 
 }

@@ -3,6 +3,7 @@ package net.jpnv.PcStoreProject.entities;
 
 import java.util.UUID;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -15,13 +16,17 @@ public class cProducto {
 	 @Id
 	    @GeneratedValue(strategy=GenerationType.IDENTITY)
 	    private Long id ;
+	    private String nombre;
+	 @Column(name = "precio_unitario")
 	    private float precioUnitario;
+	 @Column(name = "precio_venta")
 	    private float precioVenta;
-        private String nombre;
-	    private UUID foto;
-	    
 	    private String descripcion;
 	    private String tipo;
+        
+	    private UUID foto;
+	    
+	  
 	    
 	    
 	    /*Metodos set y get*/

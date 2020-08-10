@@ -30,7 +30,7 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 	            .and().headers().frameOptions().sameOrigin()
 	            .and()
 	            .formLogin()
-	            .loginPage("/PcStore/login")
+	            .loginPage("/PcStore")
 	            .permitAll()
 	            .successForwardUrl("/PcStore/private")
 	            .and()
@@ -46,10 +46,18 @@ public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
 	        auth
 	          .inMemoryAuthentication()
 	          .withUser("admin").password(passwordEncoder().encode("admin")).roles("ADMIN");
-	    }
+	        
+	        auth
+	        .inMemoryAuthentication()
+	        .withUser("tecnico").password(passwordEncoder().encode("tecnico")).roles("TECNICO");
+	        
+	        auth
+	        .inMemoryAuthentication()
+	        .withUser("cliente").password(passwordEncoder().encode("cliente")).roles("CLIENTE");
+	        }
 	    
-	    @Bean
-	    public BCryptPasswordEncoder passwordEncoder() {
+	      @Bean
+	      public BCryptPasswordEncoder passwordEncoder() {
 	        return new BCryptPasswordEncoder();
-	    }
+	      }
 }
