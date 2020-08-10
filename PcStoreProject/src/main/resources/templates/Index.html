@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>PC STORE</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="/css/main.css"  >
+    <link rel="stylesheet" type="text/css" href="/css/fonts/style.css"  >
      
 </head>
 <body>
@@ -16,26 +17,31 @@
     <ul class="navbar-nav">
 
       <li class="nav-item">
-         <a class="nav-link" href="#" style = "font-family:courier,arial,helvética;">Solicitar servicio tecnico</a>
+        <a class="nav-link" style = "font-family:courier,arial,helvÃ©tica;"  href="#"> <span class="icon-task"> Acerca de </span> </a>
+      </li>
+		
+      <li class="nav-item">
+         <a class="nav-link" href="#" style = "font-family:courier,arial,helvÃ©tica;"> <span class="icon-grid-alt">Ver catalogo</span>  </a>
       </li>
       
+      
       <li class="nav-item">
-         <a class="nav-link" href="#" style = "font-family:courier,arial,helvética;">Inicio</a>
+         <a class="nav-link" href="#" style = "font-family:courier,arial,helvÃ©tica;"> <span class="icon-home">  Inicio </span> </a>
       </li>
   
   	  <div sec:authorize="isAuthenticated()">
       	<li class="nav-item">
-       		<a class="nav-link" href="/PcStore/add_producto">Subir producto</a>
+       		<a class="nav-link" href="/PcStore/add_producto"  style = "font-family:courier,arial,helvÃ©tica;" ><span class="icon-out"> Subir producto</span></a>
       	</li>
       </div>
     <div sec:authorize="isAuthenticated()"> 
       <li class="nav-item">
-        <a class="nav-link" href="List_Productos">Lista de clientes</a>
+        <a class="nav-link" href="PcStore/list"   style = "font-family:courier,arial,helvÃ©tica;" > <span class="icon-list"> Lista de productos</span> </a>
       </li>
     </div>     
       <div sec:authorize="isAuthenticated()">
        <li class="nav-item">
-        <a class="nav-link" href="/PcStore/list_tecnicos">Lista de tecnicos</a>
+        <a class="nav-link" href="/PcStore/list_tecnicos"  style = "font-family:courier,arial,helvÃ©tica;"><span class="icon-clipboard">Lista de tecnicos</span></a>
        </li> 
       </div> 
  
@@ -43,7 +49,7 @@
      
     <div sec:authorize="isAuthenticated()">
        <li class="nav-item">
-        <a class="nav-link" href="/PcStore/logout">Cerrar sesión</a>
+        <a class="nav-link" href="/PcStore/logout" style = "font-family:courier,arial,helvÃ©tica;"> <span class="icon-in-alt">Cerrar sesiÃ³n</span></a>
        </li>    
     </div>
     
@@ -58,8 +64,8 @@
 
 <div class = "row">
   <div class="presentacion col-xs-2 col-md-10" >
-	      <p>     PC STORE</p>
-	      <p>   Tu tienda onlie!</p>
+	      <p>   <h1>  PC STORE </h1> </p>
+	      <p> <h1>  Tu tienda onlie! </h1></p>
   </div>
  
   <div class="col-xs-2 col-md-2" sec:authorize= ${#bools.setIsFalse(isAuthenticated())}>
@@ -72,8 +78,8 @@
                 </div>
                
                 <div class="form-group col-md-12">
-             	<label for="contraseña" class="col-form-label"> Contraseña  </label>
-            	<input type="password" name="password" class="form-control" placeholder="Ingrese su contraseña"/>
+             	<label for="contraseÃ±a" class="col-form-label"> ContraseÃ±a  </label>
+            	<input type="password" name="password" class="form-control" placeholder="Ingrese su contraseÃ±a"/>
                 </div>
                 
                 <div class="form-group col-md-12">
@@ -85,7 +91,12 @@
  
 </div>
 
+<div>
+<p>
 
+
+</p>
+</div>
 
 
 
@@ -148,7 +159,7 @@
 
 
 </div>
-<script type="text/javascript" src=/js/form.js> </script> 
+
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script> 

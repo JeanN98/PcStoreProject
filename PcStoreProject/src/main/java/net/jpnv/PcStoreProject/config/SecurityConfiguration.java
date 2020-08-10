@@ -11,33 +11,34 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 
+
 @Configuration
 @EnableWebSecurity
-public class SecurityConfiguration extends  WebSecurityConfigurerAdapter {
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter  {
 
 	 @Override
 	    protected void configure(HttpSecurity http) throws Exception {
 	        http.authorizeRequests()
-	            .antMatchers(
-	                "/",
-	            	"/registration**",
-	                "/js/**",
-	                "/css/**",
-	                "/img/**",
-	                "/h2-console/**",
-	                "/webjars/**").permitAll()
-	            .and().csrf().ignoringAntMatchers("/h2-console/**")
-	            .and().headers().frameOptions().sameOrigin()
-	            .and()
-	            .formLogin()
-	            .loginPage("/PcStore")
-	            .permitAll()
-	            .successForwardUrl("/PcStore/private")
-	            .and()
-	            .logout()
-	            .permitAll()
-	            .logoutRequestMatcher(new AntPathRequestMatcher("/PcStore/logout"))
-	            .logoutSuccessUrl("/PcStore"); 
+            .antMatchers(
+                "/",
+            	"/registration**",
+                "/js/**",
+                "/css/**",
+                "/img/**",
+                "/h2-console/**",
+                "/webjars/**").permitAll()
+            .and().csrf().ignoringAntMatchers("/h2-console/**")
+            .and().headers().frameOptions().sameOrigin()
+            .and()
+            .formLogin()
+            .loginPage("/PcStore")
+            .permitAll()
+            .successForwardUrl("/PcStore/private")
+            .and()
+            .logout()
+            .permitAll()
+            .logoutRequestMatcher(new AntPathRequestMatcher("/PcStore/logout"))
+            .logoutSuccessUrl("/PcStore");
 	    }
 	 
 	    @Autowired

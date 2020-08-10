@@ -13,8 +13,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "producto")
 public class cProducto {
-	 @Id
-	    @GeneratedValue(strategy=GenerationType.IDENTITY)
+	 @Id   @GeneratedValue(strategy=GenerationType.IDENTITY)
 	    private Long id ;
 	    private String nombre;
 	 @Column(name = "precio_unitario")

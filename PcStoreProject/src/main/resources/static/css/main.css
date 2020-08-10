@@ -6,6 +6,9 @@ body{
 	color:#fff;
 	background-size: cover;
      background-position: center;
+     
+     animation-delay: 3s;
+     @animation-fill-mode:initial;
 }
 
 
@@ -15,6 +18,7 @@ body{
 	color:#fff;
 	background-size: cover;
      background-position: center;
+     
 }
 
 .cuadritoServicio {
@@ -64,5 +68,15 @@ article {
 	background:	#8080ff;
 }
 
+.titulo{
+	transform:translate(200px,10px);
 
+}
+
+@keyframes mymove {
+  from {bottom: 0px;background-color:
+#F08080; }
+to {
+  top: 10px;
+}
 

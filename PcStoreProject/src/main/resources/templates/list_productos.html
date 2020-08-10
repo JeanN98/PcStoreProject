@@ -9,46 +9,55 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="/css/main.css">
+	<link rel="stylesheet" type="text/css" href="/css/fonts/style.css">
 
 </head>
 
 <body>
+
 <nav class="navbar navbar-expand-md">
-  
-  <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#main-navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="main-navigation">
+
+  <div class="collapse-fluid navbar-collapse" id="main-navigation">
     <ul class="navbar-nav">
+
       <li class="nav-item">
-        <a class="nav-link" href="/PcStore/">Inicio</a>
+        <a class="nav-link" style = "font-family:courier,arial,helvética;"  href="#"> <span class="icon-task"> Acerca de </span> </a>
+      </li>
+		
+		
+      <li class="nav-item">
+         <a class="nav-link" href="#" style = "font-family:courier,arial,helvética;"> <span class="icon-grid-alt">Ver catalogo</span>  </a>
       </li>
       
-      <div sec:authorize="isAuthenticated()">
+      
+     <li class="nav-item">
+         <a class="nav-link" href="#" style = "font-family:courier,arial,helvética;"> <span class="icon-home">  Inicio </span> </a>
+      </li>
+  
+  	  <div sec:authorize="isAuthenticated()">
       	<li class="nav-item">
-       		<a class="nav-link" href="/PcStore/add_producto">Subir producto</a>
+       		<a class="nav-link" href="/PcStore/add_producto"  style = "font-family:courier,arial,helvética;" ><span class="icon-out"> Subir producto</span></a>
       	</li>
       </div>
       
-      <li class="nav-item">
-        <a class="nav-link" href="#">Lista de clientes</a>
-      </li>
-        
       <div sec:authorize="isAuthenticated()">
        <li class="nav-item">
-        <a class="nav-link" href="/PcStore/list_tecnicos">Lista de tecnicos</a>
+        <a class="nav-link" href="/PcStore/list_tecnicos"  style = "font-family:courier,arial,helvética;"><span class="icon-clipboard">Lista de tecnicos</span></a>
        </li> 
-      </div>
-      
-       <div sec:authorize="isAuthenticated()">
+      </div> 
+ 
+ 
+     
+    <div sec:authorize="isAuthenticated()">
        <li class="nav-item">
-        <a class="nav-link" href="/PcStore/logout">Cerrar sesión</a>
+        <a class="nav-link" href="/PcStore/logout" style = "font-family:courier,arial,helvética;"> <span class="icon-in-alt">Cerrar sesión</span></a>
        </li>    
     </div>
-      
+    
     </ul>
   </div>
 </nav>
+
 
 <header class="page-header header container-fluid">
 <div class="overlay">
@@ -62,31 +71,33 @@
                             <table class="table table-striped table-responsive-lg">
                                 <thead>
                                     <tr>
+                                        <th style="width: 51%">Nro</th>
                                         <th style="width: 51%">Nombre</th>
                                         <!--  <th>Preparación</th> -->
                                         <th style="width: 15%">Precio Unitario</th>
                                         <th style="width: 10%">Precio venta</th>
                                         <th style="width: 8%">descripcion</th>
                                         <th style="width: 8%">tipo</th>
-                                         <th style="width: 8%">foto</th>
-                                          
+                                         
+                                        <!--   
                                         <div sec:authorize="isAuthenticated()">
                                            <th style="width: 8%">Edit</th>
                                            <th style="width: 8%">Delete</th>
                                         </div>
+                                        -->
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr th:each="productos : ${product}">
-                                        <td th:text="${product.id}"></td>
-                                        <td th:text="${product.nombre}"></td>
-                                        <td th:text="${product.precioUnitario}"></td>
-                                        <td th:text="${product.precioVenta}"></td>
-                                        <td th:text="${product.descripcion}"></td>
-                                        <td th:text="${product.tipo}"></td>
-                                        <td th:text="${product.foto}"></td>
+                                    <tr th:each="producto: ${product}">
+                                        <td th:text="${producto.id}"></td>
+                                        <td th:text="${producto.nombre}"></td>
+                                        <td th:text="${producto.precioUnitario}"></td>
+                                        <td th:text="${producto.precioVenta}"></td>
+                                        <td th:text="${producto.descripcion}"></td>
+                                        <td th:text="${producto.tipo}"></td>
                                         
-                                    <!--   <td><img th:src="@{/pic/{id}(id=${receta.foto}+.jpg)}" width="80" class="rounded"></td> -->
+                                        
+                                    <!--   <td><img th:src="@{/pic/{id}(id=${receta.foto}+.jpg)}" width="80" class="rounded"></td> 
                                         
                                         <td>
                                          <a data-toggle="modal" data-target="#modalLong" th:attr="data-target='#modalLong'+${producto.id }" class="btn btn-primary">
@@ -110,7 +121,7 @@
   											   </div>
 										 </div>
                                         </td>
-                                        
+                                        -->
                                     </tr>
                                 </tbody>
                             </table>
@@ -124,6 +135,5 @@
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" crossorigin="anonymous"></script>
-<script src="/js/main.js"></script>
 </body>
 </html>
