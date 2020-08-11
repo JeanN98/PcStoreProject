@@ -1,7 +1,9 @@
 INSERT INTO producto (precio_unitario,precio_venta,nombre,foto,descripcion,tipo) 
-VALUES (387, 234,'COMPUTADORA ASUS', '7f5cdd28c77b4199944febe905e7ac61','texto texto','nose');
+VALUES (600, 1000,'Latop Hp', '7f5cdd28c77b4199944febe905e7ac61','Core i7 9700k 8gb Ram // 1T DISK','producto');
 INSERT INTO producto  (precio_unitario,precio_venta,nombre,foto,descripcion,tipo) 
-VALUES (333487, 23224,'COMPUTADORAasdUS','7f5cdd28c77b4199944febe905e7ac61','texto tesxto','noadse');
+VALUES (300, 500,'Latop Lenovo yoga', '7f5cdd28c77b4199944febe905e7ac61','Core i5 8700k 4gb Ram // 590 GB','producto');
 INSERT INTO producto  (precio_unitario,precio_venta,nombre,foto,descripcion,tipo) 
-VALUES (34487, 2334,'COMPUTADORA asdUS', '7f5cdd28c77b4199944febe905e7ac61','texto texdto','dnose');
-	  
+VALUES (700, 1200,'Latop Asus', '7f5cdd28c77b4199944febe905e7ac61','Core i9 8700k 4gb Ram // 2T','producto');
+INSERT INTO producto  (precio_unitario,precio_venta,nombre,foto,descripcion,tipo) 
+VALUES (15, 25,'Pantalla Slim 19 in', '7f5cdd28c77b4199944febe905e7ac61','Pantalla Slim 32 pines','Repuesto');
+	  	  
