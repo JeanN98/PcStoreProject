@@ -67,7 +67,7 @@ public String showCatalogo(Model model) {
  
  @PreAuthorize("hasAuthority('admin')")
  @PostMapping("/add")
- public String addRecipe(cProducto producto, BindingResult result, Model model) {
+ public String addProduct(cProducto producto, BindingResult result, Model model) {
      if (result.hasErrors()) {
         return "add_producto";
      }    
