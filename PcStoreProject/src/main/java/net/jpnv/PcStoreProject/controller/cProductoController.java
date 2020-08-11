@@ -11,6 +11,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
@@ -40,9 +41,9 @@ public String Index() {
      return "add_producto";
  }
  
- @GetMapping("/list")
+@GetMapping("/list")
  public String showProducts(Model model) {
-	 model.addAttribute("product", Prod.findAll());
+	 model.addAttribute("products", Prod.findAll());
      return "list_productos";
  }
  
@@ -54,7 +55,7 @@ public String Index() {
  @PreAuthorize("hasAuthority('admin')")
  @RequestMapping("/private")
  public String showPrivate(Model model) {
-	 model.addAttribute("product", Prod.findAll());
+	 model.addAttribute("products", Prod.findAll());
      return "list_productos";
  }
  
@@ -81,10 +82,9 @@ public String Index() {
  @PostMapping("/update/{id}")
  public String updateRecipe(@PathVariable("id") Long id, cProducto producto, BindingResult result, Model model) {
      if (result.hasErrors()) {
-          producto.SetId(id);
+          producto.setId(id);
           return "update_producto";
      }
-
      Prod.save(producto);
      return "redirect:/PcStore/list";
  }
@@ -95,7 +95,7 @@ public String Index() {
  public String deleteRecipe(@PathVariable("id") Long id, Model model) {
      cProducto producto = Prod.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid recipe Id:" + id));
      Prod.delete(producto);	     
-     model.addAttribute("product", Prod.findAll());
+     model.addAttribute("products", Prod.findAll());
      return "list_productos";
  }
 
