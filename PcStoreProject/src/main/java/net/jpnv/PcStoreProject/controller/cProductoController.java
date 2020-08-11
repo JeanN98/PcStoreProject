@@ -46,6 +46,12 @@ public String Index() {
 	 model.addAttribute("products", Prod.findAll());
      return "list_productos";
  }
+
+@GetMapping("/catalogo")
+public String showCatalogo(Model model) {
+	 model.addAttribute("products", Prod.findAll());
+    return "catalogo";
+}
  
  @GetMapping("/Acerca")
  public String showSignUpForm() {

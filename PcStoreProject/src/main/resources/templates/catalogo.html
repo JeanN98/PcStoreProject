@@ -81,8 +81,8 @@
                                          
                                        
                                         <div sec:authorize="isAuthenticated()">
-                                           <th style="width: 8%">Edit</th>
-                                         <th style="width: 8%">Delete</th>
+                                           <th style="width: 8%">comprar</th>
+                                         
                                         </div>
                                        
                                     </tr>
@@ -97,30 +97,35 @@
                                         <td th:text="${producto.tipo}"></td>
                                  
                                  <div sec:authorize="isAuthenticated()">
-                                        <td><a th:href="@{/PcStore/edit/{id}(id=${producto.id})}" class="btn btn-primary"><i class="fas fa-edit ml-2"></i></a></td>
+                                        <td><a th:href="@{/PcStoreCar/list}" class="btn btn-primary"><i class="fa fa-cart-plus ml-2"></i></a></td>
                                         
-                                         <td><a data-toggle="modal" data-target="#modal-warning" th:attr="data-target='#modal-warning'+${producto.id}" class="btn btn-primary">
-                                            <i class="fas fa-trash-alt ml-2"></i></a>
-                                            <div class="modal modal-warning fade in" th:id="modal-warning+${producto.id}" >
-    											<div class="modal-dialog">
-        											<div class="modal-content">
-            											<div class="modal-header">
-                										<h5 class="modal-title text-dark">¿Borrar este producto?</h5>
-                										<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-                										<span aria-hidden="true">&times;</span></button>
-            											</div>
-            											<div class="modal-body">
-                											<h3 class="text-dark" th:text="${producto.nombre}"></h3>
-            											</div>
-            											<div class="modal-footer">
-                										<button type="button" class="btn btn-outline pull-left" data-dismiss="modal">No</button>
-                										<a type="button" class="btn btn-outline" th:href="@{/PcStore/delete/{id}(id=${producto.id})}">
-                											<i class="fa fa-check"></i>&nbsp;Sí</a>
-            											</div>
-        											</div>
-    											</div>
-											</div>
+                                         <td>
+                                         <a data-toggle="modal" data-target="#modalLong" th:attr="data-target='#modalLong'+${producto.id }" class="btn btn-primary">
+                                            <i class="fa fa-info ml-2"></i></a>
+                                         <div class="modal fade" th:id="modalLong+${producto.id}" tabindex="-1" role="dialog" aria-labelledby="detalleReceta" aria-hidden="true">
+  										 	<div class="modal-dialog" role="document">
+    											<div class="modal-content">
+      												<div class="modal-header">
+        											<h5 class="modal-title text-dark">Detalle compra</h5>
+        											<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+          											<span aria-hidden="true">&times;</span>
+        											</button>
+      												</div>
+      												<div class="modal-body">
+        												<h4 class="text-dark" th:text="${producto.nombre}"></h4>
+        												
+        												<!--  <div class="text" th:utext="${#strings.unescapeJava(#strings.replace(#strings.escapeJava(receta.preparacion),'\n','&lt;br /&gt;'))}"></div> -->
+        												
+      												</div>
+      												<div class="modal-footer">
+        											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+
+											    	</div>
+    											   </div>
+  											   </div>
+										 </div>
                                         </td>
+                                        
                                  </div>      
                                  
                                  

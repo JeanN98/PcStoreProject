@@ -7,5 +7,6 @@ import net.jpnv.PcStoreProject.entities.cCarrito;
 
 @Repository 
 public interface CarritoRepo extends CrudRepository<cCarrito,Long>{
+	
 
 }

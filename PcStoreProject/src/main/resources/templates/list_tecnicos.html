@@ -23,7 +23,7 @@
   
       <div sec:authorize="isAuthenticated()">
       	<li class="nav-item">
-       		<a class="nav-link" href="/PcStore/add_producto">Subir producto</a>
+       		<a class="nav-link" href="/PcStore/User/add_tech">Subir tecnico</a>
       	</li>
       </div>
       
@@ -55,8 +55,8 @@
     <div class="container my-2">
         <div class="card-transparent">
             <div class="card-body rounded" style="background-color: rgba(0, 0, 0, 0.4); ">
-                <div th:switch="${product}" class="container my-5">
-                        <h2 th:case="null">No Hay productos aun!</h2>
+                <div th:switch="${tecnico}" class="container my-5">
+                        <h2 th:case="null">No Hay tecnicos aun!</h2>
                         <div th:case="*">
                             <table class="table table-striped table-responsive-lg">
                                 <thead>
@@ -73,40 +73,12 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr th:each="productos : ${product}">
-                                        <td th:text="${product.id}"></td>
-                                        <td th:text="${product.nombre}"></td>
+                                    <tr th:each="tech : ${tecnico}">
+                                        <td th:text="${tech.id}"></td>
+                                        <td th:text="${tech.nombre}"></td>
                                     <!--   <td><img th:src="@{/pic/{id}(id=${receta.foto}+.jpg)}" width="80" class="rounded"></td> -->
                                         
-                                        <td>
-                                         <a data-toggle="modal" data-target="#modalLong" th:attr="data-target='#modalLong'+${producto.id }" class="btn btn-primary">
-                                            <i class="fas fa-glasses ml-2"></i></a>
-                                         <div class="modal fade" th:id="modalLong+${producto.id}" tabindex="-1" role="dialog" aria-labelledby="detalleReceta" aria-hidden="true">
-  										 	<div class="modal-dialog" role="document">
-    											<div class="modal-content">
-      												<div class="modal-header">
-        											<h5 class="modal-title text-dark">Detalle del producto</h5>
-        											<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-          											<span aria-hidden="true">&times;</span>
-        											</button>
-      												</div>
-      												<!-- 
-      												<div class="modal-body">
-        												<h4 class="text-dark" th:text="${receta.nombre}"></h4>
-        												<p><img th:src="@{/pic/{id}(id=${receta.foto}+.jpg)}" width="240" class="rounded"></p>
-        												<!--  <div class="text" th:utext="${#strings.unescapeJava(#strings.replace(#strings.escapeJava(receta.preparacion),'\n','&lt;br /&gt;'))}"></div> 
-        												<p class="text-dark" data-th-utext="${#strings.replace(#strings.escapeXml(receta.preparacion),'&#10;','&lt;br&gt;')}"></p>
-      												</div>
-      												
-      												-->
-      												<div class="modal-footer">
-        											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-
-											    	</div>
-    											   </div>
-  											   </div>
-										 </div>
-                                        </td>
+                                     
     
                                     </tr>
                                 </tbody>

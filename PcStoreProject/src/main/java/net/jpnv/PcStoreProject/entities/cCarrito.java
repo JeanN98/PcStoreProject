@@ -3,13 +3,16 @@ package net.jpnv.PcStoreProject.entities;
 import java.util.ArrayList;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
 public class cCarrito {
 	
 	@Id
-	private int numCarrito = 1;
+	 @GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Long numCarrito ;
 	private ArrayList<cProducto> producto = new ArrayList<cProducto>();
 	private float totalPrecio=0;
 	
@@ -36,11 +39,11 @@ public class cCarrito {
 		this.producto = producto;
 	}
 
-	public int getNumCarrito() {
+	public Long getNumCarrito() {
 		return numCarrito;
 	}
 
-	public void setNumCarrito(int numCarrito) {
+	public void setNumCarrito(Long numCarrito) {
 		this.numCarrito = numCarrito;
 	}
 
