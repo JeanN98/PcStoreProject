@@ -33,19 +33,6 @@
      <li class="nav-item">
          <a class="nav-link" href="/PcStore" style = "font-family:courier,arial,helvética;"> <span class="icon-home">  Inicio </span> </a>
       </li>
-  
-  	  <div sec:authorize="isAuthenticated()">
-      	<li class="nav-item">
-       		<a class="nav-link" href="/PcStore/add_producto"  style = "font-family:courier,arial,helvética;" ><span class="icon-out"> Subir producto</span></a>
-      	</li>
-      </div>
-      
-      <div sec:authorize="isAuthenticated()">
-       <li class="nav-item">
-        <a class="nav-link" href="/PcStore/User/list"  style = "font-family:courier,arial,helvética;"><span class="icon-clipboard">Lista de tecnicos</span></a>
-       </li> 
-      </div> 
- 
  
      
     <div sec:authorize="isAuthenticated()">
@@ -63,6 +50,29 @@
 <div class="overlay">
 
     <div class="container my-2">
+    
+                                     
+      <div class="subir">
+        <div class="card-transparent">
+            <div class="card-body rounded" style="background-color: rgba(0, 0, 0, 0.4); ">
+                    <form action="#" th:action="@{/PcStore/add}" th:object="${producto}" method="post" enctype="multipart/form-data">
+                          <div class="row">
+
+               
+                            <div class="form-group col-md-8">
+                                <input type="submit" class="btn btn-primary" value="Subir producto nuevo">
+                            </div>
+                        </div>
+                    </form>
+                
+            </div>
+        </div>
+        </div>
+    
+    
+    
+    
+    
         <div class="card-transparent">
             <div class="card-body rounded" style="background-color: rgba(0, 0, 0, 0.4); ">
                 <div th:switch="${products}" class="container my-5">
@@ -122,35 +132,10 @@
 											</div>
                                         </td>
                                  </div>      
-                                 
-                                 
+                               
+                              
                                   
-                                        
-                                    <!--   <td><img th:src="@{/pic/{id}(id=${receta.foto}+.jpg)}" width="80" class="rounded"></td> 
-                                        
-                                        <td>
-                                         <a data-toggle="modal" data-target="#modalLong" th:attr="data-target='#modalLong'+${producto.id }" class="btn btn-primary">
-                                            <i class="fas fa-glasses ml-2"></i></a>
-                                         <div class="modal fade" th:id="modalLong+${producto.id}" tabindex="-1" role="dialog" aria-labelledby="Descripcion" aria-hidden="true">
-  										 	<div class="modal-dialog" role="document">
-    											<div class="modal-content">
-      												<div class="modal-header">
-        											<h5 class="modal-title text-dark">Detalle del producto</h5>
-        											<button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
-          											<span aria-hidden="true">&times;</span>
-        											</button>
-      												</div>
-      												
-      											
-      												<div class="modal-footer">
-        											<button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-              
-											    	</div>
-    											   </div>
-  											   </div>
-										 </div>
-                                        </td>
-                                        -->
+                                  
                                     </tr>
                                 </tbody>
                             </table>

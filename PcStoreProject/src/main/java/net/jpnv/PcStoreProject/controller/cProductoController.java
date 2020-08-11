@@ -27,7 +27,7 @@ import net.jpnv.PcStoreProject.entities.cProducto;
 public class cProductoController {
 	
 @Autowired 
-ProductoRepo Prod; 
+private ProductoRepo Prod; 
 
 
 @RequestMapping("")
@@ -65,13 +65,15 @@ public String showCatalogo(Model model) {
      return "list_productos";
  }
  
+ 
+ 
  @PreAuthorize("hasAuthority('admin')")
  @PostMapping("/add")
- public String addProduct(cProducto producto, BindingResult result, Model model) {
+ public String addProduct(cProducto cproducto, BindingResult result, Model model) {
      if (result.hasErrors()) {
         return "add_producto";
      }    
-     Prod.save(producto);   
+     Prod.save(cproducto);   
      return "redirect:list";
  }
  

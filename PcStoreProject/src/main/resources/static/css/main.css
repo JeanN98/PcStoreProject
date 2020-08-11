@@ -79,4 +79,7 @@ article {
 to {
   top: 10px;
 }
+.subir{
+	transform:translate(1000px,10px);
+}
 

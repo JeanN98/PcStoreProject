@@ -31,7 +31,7 @@
   
   	  <div sec:authorize="isAuthenticated()">
       	<li class="nav-item">
-       		<a class="nav-link" href="/PcStore/add_producto"  style = "font-family:courier,arial,helvética;" ><span class="icon-out"> Subir producto</span></a>
+       		<a class="nav-link" href="/PcStore/list_productos"  style = "font-family:courier,arial,helvética;" ><span class="icon-out"> Subir producto</span></a>
       	</li>
       </div>
     <div sec:authorize="isAuthenticated()"> 
@@ -39,12 +39,6 @@
         <a class="nav-link" href="PcStore/list"   style = "font-family:courier,arial,helvética;" > <span class="icon-list"> Lista de productos</span> </a>
       </li>
     </div>     
-      <div sec:authorize="isAuthenticated()">
-       <li class="nav-item">
-        <a class="nav-link" href="/PcStore/list_tecnicos"  style = "font-family:courier,arial,helvética;"><span class="icon-clipboard">Lista de tecnicos</span></a>
-       </li> 
-      </div> 
- 
  
      
     <div sec:authorize="isAuthenticated()">
